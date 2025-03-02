@@ -11,6 +11,13 @@ User Authentication: Secure login and registration system for buyers and sellers
 
 Dashboard: Separate dashboards for buyers and sellers to manage orders, listings, and profiles.
 
+# Prerequisites
+Node.js: Make sure you have Node.js installed. Download it from here.
+
+MongoDB: Install MongoDB locally or use a cloud-based MongoDB service like MongoDB Atlas.
+
+Git: Install Git to clone the repository. Download it from here.
+
 # Technologies Used
 Frontend: HTML, CSS, JavaScript
 
@@ -23,11 +30,5 @@ Authentication: JSON Web Tokens (JWT)
 Version Control: Git, GitHub
 Getting Started
 
-Follow these steps to set up the project locally on your machine.
-# Prerequisites
-Node.js: Make sure you have Node.js installed. Download it from here.
 
-MongoDB: Install MongoDB locally or use a cloud-based MongoDB service like MongoDB Atlas.
-
-Git: Install Git to clone the repository. Download it from here.
 
