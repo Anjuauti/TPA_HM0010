@@ -13,9 +13,13 @@ Dashboard: Separate dashboards for buyers and sellers to manage orders, listings
 
 # Technologies Used
 Frontend: HTML, CSS, JavaScript
+
 Backend: Node.js, Express.js
+
 Database: MongoDB
+
 Authentication: JSON Web Tokens (JWT)
+
 Version Control: Git, GitHub
 Getting Started
 
