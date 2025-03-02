@@ -95,4 +95,84 @@
             e.preventDefault();
             window.location.reload();
         });
+        // Handle Add Item Form Submission
+document.getElementById('add-item-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
+    const itemName = document.getElementById('item-name').value;
+    const itemPrice = document.getElementById('item-price').value;
+    const itemImage = document.getElementById('item-image').value;
+    const itemDescription = document.getElementById('item-description').value;
+  
+    const itemData = {
+      title: itemName,
+      price: itemPrice,
+      images: [itemImage],
+      description: itemDescription,
+      category: 'other', // Default category
+      condition: 'good', // Default condition
+    };
+  
+    try {
+      const response = await fetch('/api/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('campusExchangeToken')}`,
+        },
+        body: JSON.stringify(itemData),
+      });
+  
+      if (response.ok) {
+        alert('Item added successfully!');
+        loadSellerItems(); // Refresh the seller's listed items
+      } else {
+        const data = await response.json();
+        alert(`Error: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Error adding item:', error);
+      alert('Failed to add item. Please try again.');
+    }
+  });
+  
+  // Function to Load Seller's Listed Items
+  async function loadSellerItems() {
+    try {
+      const response = await fetch('/api/products/seller', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('campusExchangeToken')}`,
+        },
+      });
+  
+      if (response.ok) {
+        const products = await response.json();
+        const sellerItemsContainer = document.getElementById('seller-items');
+        sellerItemsContainer.innerHTML = '';
+  
+        products.forEach(product => {
+          const productCard = `
+            <div class="product-card">
+              <img src="${product.images[0]}" alt="${product.title}">
+              <div class="product-info">
+                <h3 class="product-title">${product.title}</h3>
+                <p>${product.description}</p>
+                <p class="product-price">$${product.price}</p>
+              </div>
+            </div>
+          `;
+          sellerItemsContainer.innerHTML += productCard;
+        });
+      } else {
+        console.error('Failed to fetch seller items');
+      }
+    } catch (error) {
+      console.error('Error loading seller items:', error);
+    }
+  }
+  
+  // Load Seller Items on Dashboard Load
+  if (document.getElementById('seller-dashboard')) {
+    loadSellerItems();
+  }
     

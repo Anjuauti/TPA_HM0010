@@ -12,7 +12,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="/api/placeholder/40/40" alt="Campus Exchange Logo">
+            <img src="assets/logo.png" >
             <h1>Campus Exchange</h1>
         </div>
         <ul class="nav-links">
@@ -212,6 +212,16 @@
                         </select>
                     </div>
                 </div>
+                <!-- Buyer Dashboard -->
+            <div class="dashboard-content" id="buyer-dashboard">
+                <h1>Buyer Dashboard</h1>
+                
+                <!-- Display Available Products -->
+                <h2>Available Products</h2>
+                <div class="product-grid" id="buyer-products">
+                <!-- Products will be dynamically added here -->
+                </div>
+            </div>
             </div>
             
             <h2 style="margin-bottom: 20px;">Available Books</h2>
@@ -281,6 +291,37 @@
             
             <button class="add-item-btn" title="Add New Item">+</button>
         </div>
+          <!-- Seller Dashboard Form -->
+        <div class="dashboard-content" id="seller-dashboard">
+            <h1>Seller Dashboard</h1>
+            
+            <!-- Form to Add New Item -->
+            <form id="add-item-form">
+            <div class="form-group">
+                <label for="item-name">Item Name</label>
+                <input type="text" id="item-name" required>
+            </div>
+            <div class="form-group">
+                <label for="item-price">Price</label>
+                <input type="number" id="item-price" required>
+            </div>
+            <div class="form-group">
+                <label for="item-image">Image URL</label>
+                <input type="text" id="item-image" required>
+            </div>
+            <div class="form-group">
+                <label for="item-description">Description</label>
+                <textarea id="item-description" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        
+            <!-- Display Seller's Listed Items -->
+            <h2>Your Listed Items</h2>
+            <div class="product-grid" id="seller-items">
+            <!-- Items will be dynamically added here -->
+            </div>
+  </div>
     </div>
     <script src="/js/frontend.js"></script>
     <script src="javascript.js"></script>

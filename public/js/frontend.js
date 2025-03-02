@@ -190,6 +190,41 @@ const createOrder = async (orderData) => {
     throw error;
   }
 };
+// Function to Load Products for Buyers
+async function loadBuyerProducts() {
+  try {
+    const response = await fetch('/api/products');
+    if (response.ok) {
+      const products = await response.json();
+      const buyerProductsContainer = document.getElementById('buyer-products');
+      buyerProductsContainer.innerHTML = '';
+
+      products.forEach(product => {
+        const productCard = `
+          <div class="product-card">
+            <img src="${product.images[0]}" alt="${product.title}">
+            <div class="product-info">
+              <h3 class="product-title">${product.title}</h3>
+              <p>${product.description}</p>
+              <p class="product-price">$${product.price}</p>
+              <button class="btn btn-primary buy-btn" data-id="${product._id}">Add to Cart</button>
+            </div>
+          </div>
+        `;
+        buyerProductsContainer.innerHTML += productCard;
+      });
+    } else {
+      console.error('Failed to fetch products');
+    }
+  } catch (error) {
+    console.error('Error loading products:', error);
+  }
+}
+
+// Load Products on Buyer Dashboard Load
+if (document.getElementById('buyer-dashboard')) {
+  loadBuyerProducts();
+}
 
 // Example of integrating with your signup form
 document.getElementById('signup-form').addEventListener('submit', async function(e) {

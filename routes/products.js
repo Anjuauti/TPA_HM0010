@@ -158,4 +158,14 @@ router.delete('/:id', auth, async (req, res) => {
   }
 });
 
+// Get Products Listed by the Current Seller
+router.get('/seller', auth, async (req, res) => {
+  try {
+    const products = await Product.find({ seller: req.user._id });
+    res.send(products);
+  } catch (error) {
+    res.status(500).send({ message: 'Error fetching seller products', error: error.message });
+  }
+});
+
 module.exports = router;
