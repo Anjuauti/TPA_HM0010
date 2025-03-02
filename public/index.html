@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Exchange - Student Marketplace</title>
+    
+    <link rel="stylesheet" href="/css/styles.css">
+ 
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/api/placeholder/40/40" alt="Campus Exchange Logo">
+            <h1>Campus Exchange</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#about" id="about-link">About Us</a></li>
+            <li><a href="#features" id="features-link">Features</a></li>
+            <li><a href="#contact" id="contact-link">Contact Us</a></li>
+            <li><a href="#" id="signup-link" class="btn btn-outline">Sign Up</a></li>
+            <li><a href="#" id="login-link" class="btn btn-primary">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Campus Exchange</h1>
+        <p>The ultimate marketplace for students to buy and sell educational resources at affordable prices.</p>
+        <button class="btn btn-primary" id="get-started-btn">Get Started</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>Campus Exchange is a dedicated platform designed exclusively for students to buy and sell educational resources. We understand the financial challenges that students face and aim to create an affordable, secure, and user-friendly marketplace where students can trade textbooks, stationery, and other learning materials. Our platform ensures that only relevant educational products are listed, keeping the focus on academic needs and providing a trusted space for students to connect and help each other succeed.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Buy Resources</h3>
+                <p>Find affordable textbooks, stationery, and other educational materials from fellow students at your campus.</p>
+                <button class="btn btn-primary" id="buy-now-btn">Buy Now</button>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Sell Resources</h3>
+                <p>Turn your unused textbooks and supplies into cash by listing them on our secure and student-verified marketplace.</p>
+                <button class="btn btn-primary" id="sell-now-btn">Sell Now</button>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Smart Search</h3>
+                <p>Find exactly what you need quickly with our advanced search filters by course, category, price range, and condition.</p>
+                <button class="btn btn-primary">Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Campus Exchange</h3>
+                <p>Your trusted student marketplace for educational resources.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: support@campusexchange.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Address: 123 Campus Drive</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Campus Exchange. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #2563eb;">Log In</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Log In</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-signup">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #2563eb;">Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-type">I want to:</label>
+                    <select id="user-type" required>
+                        <option value="">Select an option</option>
+                        <option value="buyer">Buy Items</option>
+                        <option value="seller">Sell Items</option>
+                        <option value="both">Both Buy and Sell</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Buyer Dashboard -->
+    <div class="dashboard" id="buyer-dashboard">
+        <div class="sidebar">
+            <div class="logo" style="justify-content: center;">
+                <h2>Campus Exchange</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Payment Receipts</a></li>
+                <li><a href="#">Saved Items</a></li>
+                <li><a href="#" id="buyer-logout">Log Out</a></li>
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            <h1 style="margin-bottom: 30px;">Welcome, Student!</h1>
+            
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for textbooks, stationery, and more...">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select>
+                            <option>All Categories</option>
+                            <option>Textbooks</option>
+                            <option>Stationery</option>
+                            <option>Lab Equipment</option>
+                            <option>Electronics</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <select>
+                            <option>All Prices</option>
+                            <option>Under $25</option>
+                            <option>$25 - $50</option>
+                            <option>$50 - $100</option>
+                            <option>$100+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Condition</label>
+                        <select>
+                            <option>All Conditions</option>
+                            <option>New</option>
+                            <option>Like New</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 style="margin-bottom: 20px;">Available Books</h2>
+            
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Calculus Textbook">
+                    <div class="product-info">
+                        <h3 class="product-title">Calculus: Early Transcendentals</h3>
+                        <p>8th Edition, James Stewart</p>
+                        <p class="product-price">$45</p>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Physics Textbook">
+                    <div class="product-info">
+                        <h3 class="product-title">University Physics</h3>
+                        <p>14th Edition, Young & Freedman</p>
+                        <p class="product-price">$52</p>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Chemistry Textbook">
+                    <div class="product-info">
+                        <h3 class="product-title">Chemistry: The Central Science</h3>
+                        <p>12th Edition, Brown & LeMay</p>
+                        <p class="product-price">$38</p>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Economics Textbook">
+                    <div class="product-info">
+                        <h3 class="product-title">Principles of Economics</h3>
+                        <p>7th Edition, Mankiw</p>
+                        <p class="product-price">$40</p>
+                        <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seller Dashboard -->
+    <div class="dashboard" id="seller-dashboard">
+        <div class="sidebar">
+            <div class="logo" style="justify-content: center;">
+                <h2>Campus Exchange</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">My Listings</a></li>
+                <li><a href="#">Sales History</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#" id="seller-logout">Log Out</a></li>
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            <h1 style="margin-bottom: 30px;">Seller Dashboard</h1>
+            
+            <div style="text-align: center; padding: 100px 0;">
+                <p style="margin-bottom: 20px; font-size: 18px;">You haven't listed any items yet. Start selling now!</p>
+            </div>
+            
+            <button class="add-item-btn" title="Add New Item">+</button>
+        </div>
+    </div>
+    <script src="/js/frontend.js"></script>
+    <script src="javascript.js"></script>
+
+</body>
+</html>
