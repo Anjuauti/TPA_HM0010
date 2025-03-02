@@ -28,7 +28,10 @@ Database: MongoDB
 Authentication: JSON Web Tokens (JWT)
 
 Version Control: Git, GitHub
-Getting Started
+
+# Future Scope
+Campus Exchange is a student-focused marketplace platform designed to help students buy and sell educational resources like textbooks, stationery, and learning materials at affordable prices. With features like smart search, secure authentication, and user-friendly dashboards, it provides a trusted space for students to connect and trade. Future enhancements include mobile apps, payment integration, AI recommendations, and sustainability initiatives, making it a scalable and innovative solution for student needs.
+
 
 
 
